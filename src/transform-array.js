@@ -13,12 +13,12 @@ const { NotImplementedError } = require('../extensions/index.js');
  * transform([1, 2, 3, '--discard-prev', 4, 5]) => [1, 2, 4, 5]
  * 
  */
-function transform(/*arr*/) {
-//   if (arr.length===0) return []
+function transform(arr) {
+  if (arr.length===0) return []
 
-//   if (!Array.isArray(arr)) throw new NotImplementedError('\'arr\' parameter must be an instance of the Array!');
+  if (!Array.isArray(arr)) throw new Error('\'arr\' parameter must be an instance of the Array!');
 
-//   let newArr=[] 
+  let newArr=[] 
   
 //   let deepArr = cloneArray(arr);
 
@@ -34,22 +34,22 @@ function transform(/*arr*/) {
 // }
 
 
-//   for (let i=0; i<deepArr.length;i++){
-//     if (deepArr[i]=='--double-next') {
-//       newArr.push[deepArr[i+1]]
-//     } else if (deepArr[i]=='--double-next') {
-//       newArr.push[arr[i-1]]
-//     } else if (deepArr[i]=='--discard-prev') {
-//       newArr.pop[deepArr[i-1]]
-//     } else if (deepArr[i]=='--discard-next') {
-//       newArr.pop[deepArr[i+1]]
-//     } else {
-//       newArr.push[deepArr[i]]
-//     }
-//   }
-//   return newArr
+  for (let i=0; i<arr.length;i++){
+    if (arr[i]=='--double-next') {
+      newArr.push[arr[i+1]]
+    } else if (arr[i]=='--double-next') {
+      newArr.push[arr[i-1]]
+    } else if (arr[i]=='--discard-prev') {
+      newArr.pop[arr[i-1]]
+    } else if (arr[i]=='--discard-next') {
+      newArr.pop[arr[i+1]]
+    } else {
+      newArr.push[arr[i]]
+    }
+  }
+  return newArr
 
-  throw new NotImplementedError('Not implemented');
+  //throw new NotImplementedError('Not implemented');
   // remove line with error and write your code here
 }
 
